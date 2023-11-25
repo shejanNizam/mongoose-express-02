@@ -2,9 +2,9 @@ import bcrypt from "bcrypt";
 import { Schema, model } from "mongoose";
 
 import config from "../../config";
-import { IAddress, IFullName, IUser } from "./user.interface";
+import { TAddress, TFullName, TUser } from "./user.interface";
 
-const fullNameSchema = new Schema<IFullName>({
+const fullNameSchema = new Schema<TFullName>({
   fastName: {
     type: String,
     required: [true, "First Name is required"],
@@ -15,7 +15,7 @@ const fullNameSchema = new Schema<IFullName>({
   },
 });
 
-const addressSchema = new Schema<IAddress>({
+const addressSchema = new Schema<TAddress>({
   street: {
     type: String,
     required: [true, "Street Name is required"],
@@ -30,7 +30,7 @@ const addressSchema = new Schema<IAddress>({
   },
 });
 
-const userSchema = new Schema<IUser>({
+const userSchema = new Schema<TUser>({
   userId: {
     type: Number,
     required: [true, "Id is required and must be unique"],
@@ -86,4 +86,4 @@ userSchema.post("save", function (doc, next) {
   next();
 });
 
-export const User = model<IUser>("User", userSchema);
+export const User = model<TUser>("User", userSchema);

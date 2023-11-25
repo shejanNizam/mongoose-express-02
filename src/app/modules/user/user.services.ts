@@ -1,8 +1,8 @@
-import { IUser } from "./user.interface";
+import { TUser } from "./user.interface";
 import { User } from "./user.model";
 import userValidationSchema from "./validation.zod";
 
-const createUser = async (userData: IUser): Promise<IUser> => {
+const createUser = async (userData: TUser): Promise<TUser> => {
   const zodValidation = userValidationSchema.parse(userData);
   const result = await User.create(zodValidation);
   return result;
@@ -19,15 +19,15 @@ const getAllUsers = async (): Promise<any> => {
   return result;
 };
 
-const getSingleUser = async (id: string): Promise<IUser | null> => {
+const getSingleUser = async (id: string): Promise<TUser | null> => {
   const result = await User.findById(id);
   return result;
 };
 
 const updateUser = async (
   id: string,
-  userData: IUser,
-): Promise<IUser | null> => {
+  userData: TUser,
+): Promise<TUser | null> => {
   const result = await User.findByIdAndUpdate(id, userData, {
     new: true,
     runValidators: true,
@@ -35,7 +35,7 @@ const updateUser = async (
   return result;
 };
 
-const deleteUser = async (id: string): Promise<IUser | null> => {
+const deleteUser = async (id: string): Promise<TUser | null> => {
   const result = await User.findByIdAndDelete(id);
   return result;
 };

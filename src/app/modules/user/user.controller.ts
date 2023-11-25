@@ -24,7 +24,7 @@ const getAllUsers = async (req: Request, res: Response) => {
     const result = await userServices.getAllUsers();
     res.status(200).json({
       success: true,
-      message: "User created successfully!",
+      message: "User fetched successfully!",
       data: result,
     });
   } catch (error: any) {
