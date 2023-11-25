@@ -1,14 +1,14 @@
-export interface IFullName {
+export type IFullName = {
   fastName: string;
   lastName: string;
-}
-export interface IAddress {
+};
+export type IAddress = {
   street: string;
   city: string;
   country: string;
-}
+};
 
-export interface IUser {
+export type IUser = {
   userId: number;
   userName: string;
   password: string;
@@ -18,4 +18,4 @@ export interface IUser {
   isActive: true | false;
   hobbies: string[];
   address: IAddress;
-}
+};
