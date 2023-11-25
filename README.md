@@ -1,8 +1,8 @@
-# mongoose-express-02
+#### Domain: https://mongoose-express-nyl76p68b-shejannizam.vercel.app/
 
 ## Development Workflow
 
-Run in Development Mode
+Run in Development Mode:
 
 ```bash
   npm run start:dev
@@ -22,7 +22,11 @@ Build Project:
 
 ## API Reference
 
-#### Domain: https://mongoose-express-nyl76p68b-shejannizam.vercel.app/
+#### Create user
+
+```http
+  POST /api/users
+```
 
 #### Get all users
 
@@ -30,16 +34,10 @@ Build Project:
   GET /api/users
 ```
 
-#### Get single user
+#### Get user by id
 
 ```http
   GET /api/users/:id
-```
-
-#### create user
-
-```http
-  POST /api/users
 ```
 
 #### Update user by id
