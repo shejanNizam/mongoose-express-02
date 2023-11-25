@@ -7,43 +7,43 @@ import { IAddress, IFullName, IUser } from "./user.interface";
 const fullNameSchema = new Schema<IFullName>({
   fastName: {
     type: String,
-    required: [true, "please provide your first name"],
+    required: [true, "First Name is required"],
   },
   lastName: {
     type: String,
-    required: [true, "please provide last name"],
+    required: [true, "Last Name is required"],
   },
 });
 
 const addressSchema = new Schema<IAddress>({
   street: {
     type: String,
-    required: [true, "please provide your street name"],
+    required: [true, "Street Name is required"],
   },
   city: {
     type: String,
-    required: [true, "please provide your city name"],
+    required: [true, "City Name is required"],
   },
   country: {
     type: String,
-    required: [true, "please provide country name"],
+    required: [true, "Country Name is required"],
   },
 });
 
 const userSchema = new Schema<IUser>({
   userId: {
     type: Number,
-    required: [true, "please provide unique id"],
+    required: [true, "Id is required and must be unique"],
     unique: true,
   },
   userName: {
     type: String,
-    required: [true, "please tell us you name"],
+    required: [true, "User Name is required"],
     unique: true,
   },
   password: {
     type: String,
-    required: [true, "please provide valid password"],
+    required: [true, "Password is required"],
     trim: true,
   },
   fullName: {
@@ -56,7 +56,7 @@ const userSchema = new Schema<IUser>({
   },
   email: {
     type: String,
-    required: [true, "please provide valid email"],
+    required: [true, "Email is required"],
   },
   isActive: {
     type: Boolean,
@@ -67,7 +67,7 @@ const userSchema = new Schema<IUser>({
   },
   address: {
     type: addressSchema,
-    required: [true, "please provide your address"],
+    required: [true, "Address is required"],
   },
 });
 
