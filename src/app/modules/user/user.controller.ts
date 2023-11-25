@@ -24,7 +24,7 @@ const getAllUsers = async (req: Request, res: Response) => {
     const result = await userServices.getAllUsers();
     res.status(200).json({
       success: true,
-      message: "All users get successfully!",
+      message: "User created successfully!",
       data: result,
     });
   } catch (error: any) {
@@ -38,15 +38,14 @@ const getAllUsers = async (req: Request, res: Response) => {
 const gateSingleUser = async (req: Request, res: Response) => {
   try {
     const id = req.params.userId;
-    console.log(id);
     const result = await userServices.getSingleUser(id);
     res.status(200).json({
       success: true,
-      message: "User is retrieved successfully!",
+      message: "Users fetched successfully!",
       data: result,
     });
   } catch (error: any) {
-    res.status(404).json({
+    res.status(500).json({
       success: false,
       message: "User not found",
       error: {
@@ -61,13 +60,13 @@ const updateUser = async (req: Request, res: Response) => {
     const id = req.params.userId;
     const data = req.body;
     const result = await userServices.updateUser(id, data);
-    res.status(201).json({
+    res.status(200).json({
       success: true,
       message: "User updated successfully!",
       data: result,
     });
   } catch (error: any) {
-    res.status(404).json({
+    res.status(500).json({
       success: false,
       message: "User not found",
       error: {
@@ -81,9 +80,9 @@ const deleteUser = async (req: Request, res: Response) => {
   try {
     const id = req.params.userId;
     await userServices.deleteUser(id);
-    res.status(201).json({
+    res.status(200).json({
       success: true,
-      message: "User deleted successfully!!",
+      message: "User deleted successfully!",
       data: null,
     });
   } catch (error: any) {
