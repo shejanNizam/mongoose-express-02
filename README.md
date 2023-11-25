@@ -22,7 +22,7 @@ Build Project:
 
 ## API Reference
 
-#### Domain: https://assingment2.vercel.app/
+#### Domain: https://mongoose-express-nyl76p68b-shejannizam.vercel.app/
 
 #### Get all users
 
@@ -50,6 +50,6 @@ Build Project:
 
 #### Delete user by id
 
-`http
+```http
   Delete /api/users/:id
-`
+```
