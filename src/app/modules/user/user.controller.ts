@@ -3,9 +3,9 @@ import { userServices } from "./user.services";
 
 const createUser = async (req: Request, res: Response) => {
   try {
-    const data = req.body;
+    const { user: userData } = req.body;
 
-    const result = await userServices.createUser(data);
+    const result = await userServices.createUser(userData);
     res.status(200).json({
       success: true,
       message: "User created successfully!",
@@ -38,10 +38,11 @@ const getAllUsers = async (req: Request, res: Response) => {
 const gateSingleUser = async (req: Request, res: Response) => {
   try {
     const id = req.params.userId;
+    console.log(id);
     const result = await userServices.getSingleUser(id);
-    res.status(201).json({
+    res.status(200).json({
       success: true,
-      message: "User fetched successfully!",
+      message: "User is retrieved successfully!",
       data: result,
     });
   } catch (error: any) {

@@ -13,7 +13,7 @@ const addressValidationSchema = z.object({
 const userValidationSchema = z.object({
   userId: z.number(),
   userName: z.string(),
-  password: z.string(),
+  password: z.string().max(20),
   fullName: fullNameValidationSchema,
   age: z.number(),
   email: z.string().email("please provide valid email"),
